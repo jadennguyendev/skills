@@ -1,0 +1,16 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Marketing",
+      "description": "Skills for marketing work - campaigns, copy, positioning.",
+      "skills": []
+    },
+    {
+      "title": "Product",
+      "description": "Skills for product work - specs, discovery, prioritization.",
+      "skills": []
+    }
+  ]
+}
