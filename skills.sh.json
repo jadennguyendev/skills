@@ -10,6 +10,11 @@
     {
       "title": "Product",
       "description": "Skills for product work - specs, discovery, prioritization.",
+      "skills": ["idea-hunter"]
+    },
+    {
+      "title": "QA",
+      "description": "Skills for reviewing and checking content - accuracy, tone, consistency.",
       "skills": []
     }
   ]
