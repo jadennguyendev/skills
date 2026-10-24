@@ -3,6 +3,11 @@
   "notGrouped": "bottom",
   "groupings": [
     {
+      "title": "Content",
+      "description": "Skills for creating content - video scripts, posts, captions.",
+      "skills": ["script-writer"]
+    },
+    {
       "title": "Marketing",
       "description": "Skills for marketing work - campaigns, copy, positioning.",
       "skills": []
