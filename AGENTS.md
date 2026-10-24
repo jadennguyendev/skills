@@ -5,7 +5,7 @@ Custom agent skills, installable via skills.sh (`npx skills add jadennguyendev/s
 ## Layout
 
 - One folder per skill: `skills/<group>/<skill-name>/SKILL.md`
-- Existing groups: `marketing`, `product`
+- Existing groups: `marketing`, `product`, `qa`
 - `skills.sh.json` groups skills on the repo's skills.sh page
 
 ## Adding a skill
