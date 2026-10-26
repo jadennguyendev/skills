@@ -25,10 +25,12 @@ Each chapter is rendered as its own Opuscar film, then the films are joined with
 ## Output Files
 
 ```
-scripts/<slug>/
+videos/<slug>/
   script.en.md    # narration only - what the voice says, nothing else
   brief.md        # Series section + one visual brief per chapter, for Opuscar
   script.vi.md    # review translation of script.en.md (when review_translation is set)
+  chNN/           # one Opuscar project per chapter (opuscar-chapters), rendering <slug>-chNN.mp4
+  <slug>.mp4      # the chapters joined by assemble.py
 ```
 
 All three use the same chapter headings (`## ch01 - <title>`), so they line up. Without chapters, use one heading per section (`## hook`, `## intro`, `## s1`...).
