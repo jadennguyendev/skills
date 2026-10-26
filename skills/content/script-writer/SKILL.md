@@ -54,7 +54,7 @@ Size to ~150 words per minute. With `opuscar-chapters`, split into chapters per 
 
 ### 5. Write
 
-Write the files in `scripts/<slug>/` in the user's project, as specified in the reference: `script.en.md` (narration only), `brief.md` (Series section + per-chapter visual intent and facts to verify), `script.vi.md` (review translation, only if `review_translation` is set). Pick the template matching the video type. Report each chapter's word count and estimated seconds.
+Each video lives in its own folder, `videos/<slug>/` in the user's project: its scripts, its chapter projects and the joined video. Write the files there, as specified in the reference: `script.en.md` (narration only), `brief.md` (Series section + per-chapter visual intent and facts to verify), `script.vi.md` (review translation, only if `review_translation` is set). Pick the template matching the video type. Report each chapter's word count and estimated seconds.
 
 ### 6. Refine and save
 
@@ -63,7 +63,7 @@ Offer adjustments (stronger hook, trim/expand, tone, humor, data, storytelling, 
 ```bash
 python3 scripts/script_db.py add_script <<'EOF'
 {"title": "Why Printing Money Doesn't Make Anyone Richer", "type": "explainer",
- "tone": "educational-patient", "path": "scripts/why-printing-money", "chapters": 7,
+ "tone": "educational-patient", "path": "videos/why-printing-money", "chapters": 7,
  "word_count": 1500, "duration_minutes": 10}
 EOF
 ```
@@ -74,12 +74,12 @@ The DB stores the path, not the text - the files are the source of truth.
 
 Render each chapter as its own film with the `lemo-opuscar` skill, one run per chapter, using this prompt:
 
-> Use lemo-opuscar. Make chapter chNN of "<title>", project folder `<slug>-chNN`. Follow the Series section and the chNN section of `scripts/<slug>/brief.md`. Narration is the chNN section of `scripts/<slug>/script.en.md`, word for word. The brief answers your questions; only ask about what it leaves open.
+> Use lemo-opuscar. Make chapter chNN of "<title>", project folder `videos/<slug>/chNN`, film `<slug>-chNN.mp4`. Follow the Series section and the chNN section of `videos/<slug>/brief.md`. Narration is the chNN section of `videos/<slug>/script.en.md`, word for word. The brief answers your questions; only ask about what it leaves open.
 
 Render ch01 first and review it: the style, voice and subtitle look it lands on become the Series settings for every other chapter (write them into `brief.md` and the preferences). Then join:
 
 ```bash
-python3 scripts/assemble.py <slug>.mp4 <slug>-ch01/<slug>-ch01.mp4 <slug>-ch02/<slug>-ch02.mp4 ...
+python3 scripts/assemble.py videos/<slug>/<slug>.mp4 videos/<slug>/ch01/<slug>-ch01.mp4 videos/<slug>/ch02/<slug>-ch02.mp4 ...
 ```
 
 It stream-copies the chapters (they must share style, size and fps), merges their `.srt` files with shifted timings, and prints YouTube chapter timestamps.
