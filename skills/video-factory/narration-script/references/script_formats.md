@@ -11,81 +11,40 @@
 [CTA - 9:30-10:00]        Primary CTA, secondary CTA (link, next video), sign-off
 ```
 
-## Chapters (production: opuscar-chapters)
+## Chapters
 
-Each chapter is rendered as its own Opuscar film, then the films are joined with hard cuts. So every chapter must work alone and still flow into the next.
+Every video is split into chapters, so the script reads as a run of small arcs and the shot list can plan each one alone.
 
-- **Length**: 60-120 s, 150-300 words. Never over 150 s - Opuscar's cost climbs steeply past 2-3 minutes. A 10-minute video is 6-8 chapters.
+- **Length**: usually 60-180 s, 150-450 words. A 10-minute video is 5-8 chapters.
 - **One idea per chapter**, with its own small arc: question or tension, explanation, turn.
-- **Open on a hook in the first 3 seconds** - Opuscar demands it. No "In this chapter...", no title card at the start (use YouTube chapter markers instead).
-- **End on a hand-off**: a line that closes this idea and opens the next ("But if printing money doesn't create bread... who ends up eating less?"). The next chapter opens by answering it, so the hard cut reads as continuous.
+- **Open on a hook in the first 3 seconds**. No "In this chapter...", no title card at the start (use YouTube chapter markers instead).
+- **End on a hand-off**: a line that closes this idea and opens the next ("But if printing money doesn't create bread... who ends up eating less?"). The next chapter opens by answering it.
 - **ch01** = video hook + intro + first idea. **Last chapter** = conclusion + CTA.
-- **A visual through-line** (a recurring metaphor, object or character) carried across all chapters - it is what makes separately rendered films feel like one video.
+- **A visual through-line** (a recurring metaphor, object or character) carried across all chapters, recorded in the bible's `series.through_line`.
 
-## Output Files
+## Narration in screenplay.json
 
-```
-videos/<slug>/
-  script.en.md    # narration only - what the voice says, nothing else
-  brief.md        # Series section + one visual brief per chapter, for Opuscar
-  script.vi.md    # review translation of script.en.md (when review_translation is set)
-  qa.md           # latest script-qa verdict, score and findings for script.en.md
-  chNN/           # one Opuscar project per chapter (opuscar-chapters), rendering <slug>-chNN.mp4
-  <slug>.mp4      # the chapters joined by assemble.py
-```
+`03-script/screenplay.json` is the source; `script.<lang>.md` and `screenplay.txt` are rendered from it. One scene per chapter:
 
-All three use the same chapter headings (`## ch01 - <title>`), so they line up. Without chapters, use one heading per section (`## hook`, `## intro`, `## s1`...).
-
-### script.en.md
-
-Spoken words only, ready for TTS and subtitles: no cues, no brackets, no stage directions. Numbers written the way they should be read when it matters ("nine percent", "two thousand eight").
-
-```markdown
-# Why Printing Money Doesn't Make Anyone Richer
-
-## ch01 - The billion-dollar question (~90 s, 220 words)
-
-If the government printed a billion dollars for every person tomorrow... would you be richer?
-...
-But to see why, we need an island with ten people and ten loaves of bread.
-
-## ch02 - What money really is (~100 s, 240 words)
-...
+```json
+{
+  "scene_id": 1,
+  "title": "The billion-dollar question",
+  "est_duration_sec": 90,
+  "facts_to_verify": [],
+  "elements": [
+    { "type": "action", "text": "A billion arrives in everyone's account at once; the island is introduced at the end." },
+    { "type": "vo", "text": "If the government printed a billion dollars for every person tomorrow... would you be richer?" },
+    { "type": "vo", "text": "But to see why, we need an island with ten people and ten loaves of bread." }
+  ]
+}
 ```
 
-### brief.md
+- Each `vo` element is one spoken paragraph: spoken words only, ready for TTS and subtitles. No cues, no brackets, no stage directions. Numbers written the way they should be read when it matters ("nine percent", "two thousand eight").
+- `action` elements hold the visual intent (see Visual Intent below): what the viewer must see and understand, mood, and what enters from and exits to the neighboring chapters.
+- `facts_to_verify`: every claimed number, name, date and quote, with its value ("Berlin bread price 1923: ~250 marks in January to ~200 billion marks in November").
 
-```markdown
-# Brief - Why Printing Money Doesn't Make Anyone Richer
-
-## Series (same for every chapter)
-- Genre: explainer - see the genre table in SKILL.md step 3
-- Opuscar style: <slug> - one style for all chapters
-- Voice: tts skill - narrator Qwen3 <Ryan/Aiden> + instruct, climax characters in voices/ (Chatterbox)
-- Size/fps: 1920x1080, style default fps
-- Subtitles: burned in, plus .srt
-- Through-line: the island - same ten villagers and the same bakery in every chapter
-- Score: same instrument palette and tempo across chapters; each chapter ends on a resolved cadence with ~0.5 s of room tone and opens without a musical pickup, so hard cuts land clean
-- Audience: 18-30, no economics background
-
-## ch01 - The billion-dollar question
-- Length: ~90 s
-- Viewer must understand: money is not the same thing as wealth (setup only)
-- Must show: a billion arriving in everyone's account; the island introduced at the end
-- Mood: curious, calm
-- Enters from: cold open | Exits to: ch02 (the island)
-- Facts to verify: none
-
-## ch02 - What money really is
-...
-- Facts to verify: Berlin bread price 1923 (~250 marks in January to ~200 billion marks in November)
-```
-
-Describe what the viewer must see and understand - never camera moves, cuts or shot types. Opuscar writes its own treatment, shot list and transitions, and fights a shot list handed to it.
-
-### script.vi.md
-
-A faithful translation for the creator to review meaning and facts - not for publishing. Same headings; translate sentence by sentence, keep numbers and names identical, don't polish or adapt jokes.
+The rendered `script.en.md` gets one heading per chapter, `## ch01 - The billion-dollar question (~90 s, 220 words)`, which script-qa uses to check timing.
 
 ## Common YouTube Video Types
 
@@ -412,12 +371,12 @@ Example openers:
 
 ## Visual Intent
 
-Visual notes belong in `brief.md`, never in the narration. Write intent, not direction:
+Visual notes belong in the chapter's `action` elements, never in the narration. Write intent, not direction - the shot list decides camera, cuts and shot types:
 
 - Good: "Viewer must see the price of bread doubling while the number of loaves stays at ten."
 - Bad: "[Cut to close-up of bakery shelf, slow push-in]"
 
-For every number that will appear on screen, add it to "Facts to verify" with the claimed value - a wrong figure gets drawn into the film.
+For every number that will appear on screen, add it to the chapter's `facts_to_verify` with the claimed value - a wrong figure gets drawn into the film.
 
 ## Audience-Specific Adjustments
 

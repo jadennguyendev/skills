@@ -6,7 +6,7 @@ Custom agent skills, installable via skills.sh (`npx skills add jadennguyendev/s
 
 - One folder per skill: `skills/<group>/<skill-name>/SKILL.md`
 - Existing groups: `video-factory`, `marketing`, `product`, `qa`
-- `video-factory` covers the full video pipeline end to end: research -> write script -> QA script and content -> output formats. Video-specific QA lives here, not in `qa`
+- `video-factory` covers video pre-production: the `video-factory` skill routes a video through story -> screenplay or narration -> shot list, ending at documents (rendering is the user's choice of tool). Shared scripts and formats live in `skills/video-factory/video-factory/`, so the group installs together. Video-specific QA lives here, not in `qa`
 - `skills.sh.json` groups skills on the repo's skills.sh page
 - `skills/video-factory/avoid-ai-writing/` is vendored from upstream (see README Credits). Never edit it by hand - resync the whole folder at a new upstream sha. The em dash rule does not apply inside it
 

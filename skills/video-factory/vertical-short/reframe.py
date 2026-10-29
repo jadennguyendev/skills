@@ -32,8 +32,7 @@ from fractions import Fraction
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "script-writer/scripts"))   # the sibling skill
-from assemble import cues, probe  # noqa: E402
+from assemble import cues, probe
 
 W, H, SW, SH = 1080, 1920, 1920, 1080
 MIN_W = round(SH * W / H)          # 608: the crop that fills the frame

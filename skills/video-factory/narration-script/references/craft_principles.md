@@ -1,7 +1,7 @@
 # Craft Principles for Narration Scripts
 
 Story and explanation principles from screenwriters, documentary makers, editors, radio producers and YouTube creators, each traced to the person's own book, talk, letter or document. This file complements `script_formats.md` (structures, templates, timing) and does not repeat it.
-Every genre uses it; genre files in `genres/` add to it and override what does not fit. Read it before step 4 (outline) and again before step 5 (write); run the revision checklist at the end before handing the draft to script-qa.
+Every genre uses it; genre files in `genres/` add to it and override what does not fit. Read it before step 2 (outline) and again before step 3 (write); run the revision checklist at the end before handing the draft to script-qa.
 Every example sentence here is meant to pass `../../script-qa/narration-profile.md`. Where a famous technique collides with that profile, the entry says how to use it without the tell.
 
 ## 1. Premise and angle
@@ -16,7 +16,7 @@ Every example sentence here is meant to pass `../../script-qa/narration-profile.
   - In a narration script: before outlining, list the three facts a viewer is least likely to know. If none would make a friend stop you to ask "really?", propose a different angle to the user instead of writing.
   - Sources: [Kurzgesagt, "How research and factchecking work at Kurzgesagt" (2023)](https://medium.com/@Kurzgesagt/how-research-and-factchecking-work-at-kurzgesagt-f5b239188255); [Glass, Transom manifesto part 2 (2004)](https://transom.org/2004/ira-glass/)
 - **Lead with the fact that sounds untrue** - Werner Herzog, Minnesota Declaration: facts "sometimes have a strange and bizarre power" that makes their truth seem unbelievable.
-  - In a narration script: build the hook or a turn on a verified fact of that kind ("In 1923 a loaf of bread in Berlin cost two hundred billion marks."). Herzog's licence to reach truth through "fabrication and imagination and stylization" does not transfer to explainers: every figure goes into brief.md under "Facts to verify".
+  - In a narration script: build the hook or a turn on a verified fact of that kind ("In 1923 a loaf of bread in Berlin cost two hundred billion marks."). Herzog's licence to reach truth through "fabrication and imagination and stylization" does not transfer to explainers: every figure goes into the chapter's `facts_to_verify`.
   - Source: [Herzog, Minnesota Declaration, points 3 and 5 (1999)](https://www.wernerherzog.com/files/wernerherzog/docs/doc_text_minnesota.pdf)
 - **Know the punchline before the first line** - Andrew Stanton (Pixar): storytelling is joke telling. Know your ending, so everything from the first sentence to the last leads to a singular goal.
   - In a narration script: write the last chapter's payoff sentence before ch01's hook, then check that the hook asks the question that sentence answers.
@@ -34,7 +34,7 @@ Every example sentence here is meant to pass `../../script-qa/narration-profile.
   - In a narration script: chronology is the explainer's trap ("In 1971... Then in 1980... Then in 2008..." is a list of dates). Order the chapters by what caused what, and give a date only where the date changes the meaning.
   - Source: [Poetics, tr. S. H. Butcher, Parts IX-X](http://classics.mit.edu/Aristotle/poetics.1.1.html)
 - **Remove it and see** - Aristotle, Poetics Part VIII: a part whose presence or absence "makes no visible difference, is not an organic part of the whole."
-  - In a narration script: for each chapter, ask whether the ending still lands without it. If it does, merge or cut the chapter; every chapter is a separate, paid Opuscar render.
+  - In a narration script: for each chapter, ask whether the ending still lands without it. If it does, merge or cut the chapter; every chapter costs its own shots and screen time.
   - Source: [Poetics, tr. Butcher, Part VIII](http://classics.mit.edu/Aristotle/poetics.1.1.html)
 - **The story spine** - Emma Coats, story basic #4: once upon a time there was a situation, every day something held, one day something changed, because of that (twice), until finally.
   - In a narration script: fill it in for an explainer before the outline. "Every day, ten villagers trade coins for bread at steady prices. One day the council prints a billion. Because of that, everyone bids more. Because of that, the baker raises prices. Until finally, a billion buys the same ten loaves." Each slot becomes a chapter or a turn.
@@ -94,10 +94,10 @@ Every example sentence here is meant to pass `../../script-qa/narration-profile.
   - In a narration script: give the through-line a character who asks the viewer's question (a villager who has never heard of a central bank). The question earns the explanation and keeps it inside the story world.
   - Source: [Sorkin, WGA East OnWriting ep. 41, transcript (2021)](https://www.wgaeast.org/onwriting/aaron-sorkin-the-trial-of-the-chicago-7/)
 - **Simplify on purpose, and say so once** - Kurzgesagt aims for every simplification to be "a deliberate choice"; their fact checkers ask whether a concept was simplified so far that it misleads.
-  - In a narration script: log each simplification in brief.md beside the facts to verify. If one changes the answer for some viewers, add one plain sentence: "Real towns have more than one bakery, but the logic holds."
+  - In a narration script: log each simplification in the bible's `series.notes`. If one changes the answer for some viewers, add one plain sentence: "Real towns have more than one bakery, but the logic holds."
   - Source: [Kurzgesagt, "How research and factchecking work at Kurzgesagt" (2023)](https://medium.com/@Kurzgesagt/how-research-and-factchecking-work-at-kurzgesagt-f5b239188255)
 - **Numbers the ear can hold** - NPR Training: numbers make listeners do math, and spoken numbers are easily missed, misheard or forgotten; the ear handles about one fact or idea per sentence.
-  - In a narration script: one number per sentence, rounded, with a comparison the viewer can picture, and do the arithmetic for them: "State A spends about twice what State B does." Exact figures go on screen through brief.md.
+  - In a narration script: one number per sentence, rounded, with a comparison the viewer can picture, and do the arithmetic for them: "State A spends about twice what State B does." Exact figures go on screen through the chapter's `action` elements.
   - Source: [NPR Training, "The journey from print to radio storytelling"](https://www.npr.org/sections/npr-training/2025/05/30/g-s1-65814/the-journey-from-print-to-radio-storytelling-a-guide-for-navigating-a-new-landscape)
 - **Definite, specific, concrete** - William Strunk Jr., rule 12: prefer definite, specific, concrete language to the vague and general.
   - In a narration script: name the bakery, the price, the year, the person. "Prices rose sharply" becomes "A loaf that cost one coin on Monday cost two by Friday."
@@ -121,13 +121,13 @@ Every example sentence here is meant to pass `../../script-qa/narration-profile.
   - In a narration script: build metaphors from the video's own through-line ("the baker's ledger") and drop stock ones ("tip of the iceberg", "a perfect storm"). One figure per chapter is plenty.
   - Source: [Orwell, "Politics and the English Language", rule i](https://www.orwellfoundation.com/the-orwell-foundation/orwell/essays-and-other-works/politics-and-the-english-language/)
 - **Add to the picture** - Billy Wilder: in voice-over, don't describe what the audience already sees. "Add to what they're seeing." Walter Murch warns that a guide who never lets people look for themselves ends up resented.
-  - In a narration script: brief.md says what the viewer sees; the narration supplies what the picture cannot show: the cause, the number, the consequence, a person's reason. Opuscar writes its own shots, so narrating the picture can also contradict it.
+  - In a narration script: the `action` elements say what the viewer sees; the narration supplies what the picture cannot show: the cause, the number, the consequence, a person's reason. The pictures are made later and by someone else, so narrating them can also contradict them.
   - Sources: [Crowe, Conversations with Wilder (1999)](https://archive.org/details/conversationswit0000wild); [Murch, In the Blink of an Eye, 2nd ed. (2001)](https://www.silmanjamespress.com/shop/filmmaking-directing/in-the-blink-of-an-eye2nd-edition/)
 
 ## 7. Character and stakes (even in explainers)
 
 - **Make me care, through people** - Andrew Stanton calls "Make me care" the greatest story commandment. Ken Burns told the Mayo Clinic his "films were about people, not institutions."
-  - In a narration script: tell an institution's story through one person's decision at one moment, using a person from the brief (an invented name is a P1 finding). "The economy" makes no one care; a baker deciding whether to raise her price does.
+  - In a narration script: tell an institution's story through one person's decision at one moment, using a person from the chapter's `facts_to_verify` (an invented name is a P1 finding). "The economy" makes no one care; a baker deciding whether to raise her price does.
   - Sources: [Stanton, TED (2012)](https://www.ted.com/talks/andrew_stanton_the_clues_to_a_great_story); [Burns, "A Note from Ken Burns", PBS](https://www.pbs.org/kenburns/the-mayo-clinic/note-from-ken-burns)
 - **Intention and obstacle** - Aaron Sorkin: somebody wants something, something stands in their way, and it must be hard to overcome; the tactics they use to get past it are the story.
   - In a narration script: even an explainer has an agent with a goal. "The central bank wants prices to rise two percent a year. Its main tool is the interest rate, and raising it puts people out of work." Name the want and the obstacle in the chapter where the agent first appears.

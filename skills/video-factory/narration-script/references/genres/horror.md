@@ -11,25 +11,25 @@ The narration works through the ear: it carries what is heard, suspected and hel
   - In a narration script: extend the outline's X/Y line with the effect: "a story about X, what's interesting is Y, and the viewer should end feeling Z" (watched in their own home; a debt coming due). Cut any chapter, aside or joke that pulls against Z.
   - Source: [Poe, "The Philosophy of Composition", Graham's Magazine (April 1846)](https://www.eapoe.org/works/essays/philcomp.htm)
 - **Evil outside or evil inside** - John Carpenter: horror has two stories. In the external one, evil comes from "the other tribe, this thing in the darkness". The internal one is the human heart, which he calls harder to tell.
-  - In a narration script: choose one in the outline and record it in brief.md; it decides what the last chapter may reveal. A turn from outside to inside (the narrator was the haunting) needs that turn planted in at least two earlier chapters, or it plays as a cheat.
+  - In a narration script: choose one in the outline and record it in the bible; it decides what the last chapter may reveal. A turn from outside to inside (the narrator was the haunting) needs that turn planted in at least two earlier chapters, or it plays as a cheat.
   - Source: [Carpenter, interview, Vulture (July 2011)](https://www.vulture.com/2011/07/john_carpenter.html)
 - **Close enough to happen to me** - M. R. James wanted a fairly familiar setting and characters "such as you may meet or hear any day", so the reader thinks it could happen to them, and a ghost that is "malevolent or odious". Jordan Peele built Get Out on a situation everyone shares: meeting a partner's parents for the first time.
   - In a narration script: set the story where the viewer lives (a rented flat, a night shift, a family group chat) and give the threat intent toward someone. A sad, helpful ghost belongs in another genre file.
   - Sources: [James, preface to More Ghost Stories of an Antiquary (1911)](https://en.wikisource.org/wiki/More_Ghost_Stories_of_an_Antiquary); [Peele on Fresh Air, NPR (2017, rebroadcast 2018)](https://www.npr.org/2018/01/05/575843147/get-out-sprang-from-an-effort-to-master-fear-says-director-jordan-peele)
 - **Two timelines: what happened, and what you tell** - H. P. Lovecraft drafted two synopses: events in the order they occurred, then in the order of narration, with notes on emphasis and climax, and changed the first whenever the second demanded it.
-  - In a narration script: brief.md's story bible holds the true chronology (what the thing is, what it wants, when each event happened); the outline holds the telling order. Chapters can then open late, flash back, or hold a fact until ch05 without contradicting each other, and each Opuscar render is checked against the same bible.
+  - In a narration script: the bible's story notes hold the true chronology (what the thing is, what it wants, when each event happened); the outline holds the telling order. Chapters can then open late, flash back, or hold a fact until ch05 without contradicting each other, and every picture is checked against the same bible.
   - Source: [Lovecraft, "Notes on Writing Weird Fiction"](https://www.hplovecraft.com/writings/texts/essays/nwwf.aspx)
 - **Realism everywhere except the one marvel** - Lovecraft: impossible events convince only through "careful realism in every phase of the story" except the one marvel. M. R. James: the strongest ghost stories fix "a definite time and place" and give clear, matter-of-fact detail.
   - In a narration script: one supernatural premise per video. Everything around it is dull and checkable: the bus timetable, the landlord's texts, the rent. "The flat was cheap because the boiler was old. That was what the agent said."
   - Sources: [Lovecraft, "Notes on Writing Weird Fiction"](https://www.hplovecraft.com/writings/texts/essays/nwwf.aspx); [James, "Some Remarks on Ghost Stories", The Bookman, December 1929, pp. 169-172 (online transcription)](https://www.steve-calvert.co.uk/some-remarks-on-ghost-stories-m-r-james/)
 - **The first sentence already works on the viewer** - Poe, reviewing Hawthorne: the writer conceives one effect first, and if the opening sentence does not move toward it, he has failed at the first step.
-  - In a narration script: ch01 opens on an ordinary scene with one wrong detail, inside Opuscar's three-second hook. "Every night at ten, the light in the flat across the road went off. On Tuesday it stayed on, and someone stood at the window." A line that names the fear ("This story still haunts me") promises the effect without producing it.
+  - In a narration script: ch01 opens on an ordinary scene with one wrong detail, inside the three-second hook. "Every night at ten, the light in the flat across the road went off. On Tuesday it stayed on, and someone stood at the window." A line that names the fear ("This story still haunts me") promises the effect without producing it.
   - Source: [Poe, review of Twice-Told Tales, Graham's Magazine (May 1842), p. 299](https://www.eapoe.org/works/criticsm/gm542hn1.htm)
 - **Terror first, horror late, revulsion last** - Stephen King ranks the tools "terror on top, horror below it", with the gag reflex of revulsion at the bottom, and drops a level only when the one above fails. Peele, citing King's distinction, calls terror (the fear of what's to come) the most important: once the audience knows the story is heading somewhere dark, their imagination builds a more personal horror than the film can.
   - In a narration script: map the ladder onto chapters. Early chapters run on terror (something is coming, and it is closer than last night). The climax chapter may cross into horror (it is here). Revulsion, if used at all, gets one line, and its picture stays inside YouTube's graphic-content rules.
   - Sources: [King, Danse Macabre (1981)](https://archive.org/details/stephenkingsdans00king_0); [Peele on Fresh Air, NPR Halloween special (2022)](https://www.npr.org/2022/10/31/1132235091/venture-into-the-fresh-air-crypt-for-a-halloween-horror-fest)
 - **Keep the door shut** - Stephen King: what waits behind the closed door frightens most; open it on a ten-foot bug and the audience thinks, "I was afraid it might be a hundred feet tall." In On Writing: "Description begins in the writer's imagination, but should finish in the reader's."
-  - In a narration script: show the thing through traces and other people's behavior (the dog will not climb the stairs; the neighbor stops taking the lift), never a full inventory. Save the clearest glimpse for the last chapter and keep even that partial. brief.md's reveal ledger gives Opuscar the same limit.
+  - In a narration script: show the thing through traces and other people's behavior (the dog will not climb the stairs; the neighbor stops taking the lift), never a full inventory. Save the clearest glimpse for the last chapter and keep even that partial. The bible's reveal ledger gives the film the same limit.
   - Sources: [King, Danse Macabre (1981)](https://archive.org/details/stephenkingsdans00king_0); [King, On Writing (2000)](https://archive.org/details/onwritingmemoiro0000king)
 - **The character stays for a reason** - Jordan Peele: a protagonist who is told they are not seeing what they see is the ideal thriller state. It keeps them in danger longer, believably, and satisfies the audience's need for the character to be smart.
   - In a narration script: each time the protagonist stays, give the reason in one sentence: the lease, the money, the child, the fear of looking foolish. "I told myself it was the pipes, because the other answer meant moving out and losing the deposit."
@@ -52,7 +52,7 @@ The narration works through the ear: it carries what is heard, suspected and hel
 
 ## Overrides to craft_principles.md
 
-- Lead with the fact that sounds untrue: keep for claimed-true stories and legends, with every claim in Facts to verify. For declared fiction, Herzog's licence applies, and the invented facts go in the story bible.
+- Lead with the fact that sounds untrue: keep for claimed-true stories and legends, with every claim in `facts_to_verify`. For declared fiction, Herzog's licence applies, and the invented facts go in the story bible.
 - Withhold the answer, never the context: change - horror may hold back the nature of the threat for good (Keep the door shut). Context still comes early: where we are, who is at risk, and what the rule is.
 - Suspense over surprise: keep and lean on it. One sudden-event line ("Then the phone rang.") is allowed per video, after suspense is built, never as the hook.
 - Give two plus two, not four: keep; it is the genre's main tool. The viewer works out what the shape in the photo is a beat before the narrator says it, or the narrator never says it.
@@ -61,14 +61,14 @@ The narration works through the ear: it carries what is heard, suspected and hel
 - Action, then what it means: does not apply - no reflection line after a scare and no moral at the end. Lovecraft judges a tale built to teach as a lesser one.
 - Pay off the hook in its own terms, then stop: keep; the payoff may be an image rather than an explanation.
 - Re-engage around minute three: keep, as the first confirmed wrongness (a second witness, a photo), not as gore.
-- Add to the picture: extend - the narration carries sound and doubt; brief.md tells the film what not to show.
+- Add to the picture: extend - the narration carries sound and doubt; the bible tells the film what not to show.
 - Short tension inside long tension: keep. Long question: what is it, and will they get out. Short question: will tonight be different.
 - Chapter hand-offs (script_formats.md): a hand-off may close on an unresolved sound or image instead of a question ("Upstairs, the knocking started again."); the next chapter opens inside it.
 
-## Brief additions
+## Bible additions
 
-- Series section: the effect line (Poe), and whether the evil is outside or inside (Carpenter).
-- Fiction or claimed true, stated once. Claimed-true stories carry a sources list and Facts to verify like any explainer; never call fiction a "true story". Fiction says it is fiction in the video or its metadata, since YouTube weighs that context for dramatized violence.
+- `series`: the effect line (Poe), and whether the evil is outside or inside (Carpenter).
+- Fiction or claimed true, stated once. Claimed-true stories carry a sources list and `facts_to_verify` like any explainer; never call fiction a "true story". Fiction says it is fiction in the video or its metadata, since YouTube weighs that context for dramatized violence.
 - Story bible: the true chronology, the threat's rules and intent, and every invented name, place, date and number. script-qa checks invented specifics against this list.
 - Reveal ledger, per chapter: what the viewer may see of the threat (nothing, trace, partial, or at most a clear glimpse in the last chapter). The film never shows more than the ledger allows.
 - Garlic list: one to three loaded objects, the chapters they appear in, and how the last appearance has changed.
@@ -79,7 +79,7 @@ The narration works through the ear: it carries what is heard, suspected and hel
 
 | Rule (narration-profile.md) | Change for this genre | Why |
 |---|---|---|
-| Invented specifics (P1) | Relaxed for declared fiction, per the fiction definition in narration-profile.md: only a contradiction of the story bible, or a new named character, place or rule missing from it, is P1. Claimed-true stories: unchanged | Fiction needs invented particulars; the bible keeps separately rendered chapters consistent |
+| Invented specifics (P1) | Relaxed for declared fiction, per the fiction definition in narration-profile.md: only a contradiction of the story bible, or a new named character, place or rule missing from it, is P1. Claimed-true stories: unchanged | Fiction needs invented particulars; the bible keeps every chapter's pictures consistent |
 | Staccato drama (3+ fragments in a row) | Relaxed once: one run of up to three short fragments per video, at the climax beat only | A held breath at the peak is the one earned use; anywhere else it reads as AI drama |
 | Speculative and second-person openers | "Imagine..." stays strict. Second-person present-tense narration ("You wake at three. The hall light is on.") is allowed as a mode when it runs a whole chapter or the whole video | A long-standing narrated-horror form; the tell is the one-line "Imagine" hook, not the person |
 | Rhetorical questions | Count unchanged (one per chapter); a narrator's question inside the scene ("Had I left that door open?") uses that one | Doubt drives the genre; stacked doubt questions are the AI pattern |

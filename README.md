@@ -58,18 +58,22 @@ spend your words there, not in the title.
 
 ## Video Factory pipeline
 
-Each video lives in its own folder, `videos/<slug>/`, in the user's project. Stages hand off through files in that folder:
+Pre-production only: the pipeline turns an idea, a story or a topic into review-ready documents and stops there. Rendering is the user's choice (Opuscar, AI image/video tools, TTS). `video-factory` is the entry point: it sets up `videos/<slug>/config.json` (asking which production tool the user will render with), runs each stage, and rebuilds a local viewer, `videos/<slug>/index.html`, at every review gate.
 
 | Stage | Skill | Reads | Writes |
 |-------|-------|-------|--------|
-| Research | (planned) | topic | `research.md` |
-| Script | `script-writer` | brief, preferences | `script.en.md`, `brief.md`, `script.vi.md` |
-| QA gate | `script-qa` (fresh subagent) | `script.en.md` | `qa.md` - PASS / REVISE / FAIL + score |
-| Voice | `tts` | `script.en.md` | `voice.json`, `voice.wav`, `voice.segments.json` |
-| Render | `lemo-opuscar`, one run per chapter | `script.en.md`, `brief.md` | `chNN/<slug>-chNN.mp4`, `<slug>.mp4` |
-| Vertical | `vertical-short` | `<slug>.mp4` | 9:16 Shorts |
+| Setup | `video-factory` | `.video-factory.json`, the user's material | `config.json`, `00-source/source.md` |
+| Story (film, optional) | `story-writer` | `00-source/` | `01-story/story-bible.md`, `story.md`, `review.md` |
+| Adaptation (film) | `screen-adapter` | `01-story/` or `00-source/` | `02-adaptation/analysis.json`, `beats.json`, `bible.json`; `03-script/screenplay.json`, `screenplay.txt`, `review.md` |
+| Narration | `narration-script` | `00-source/` | `02-adaptation/bible.json`; `03-script/screenplay.json`, `script.en.md`, `screenplay.txt` |
+| QA gate (narration, English) | `script-qa` (fresh subagent) | `03-script/script.en.md` | `03-script/review.md` - PASS / REVISE / FAIL + score |
+| Shot list | `shot-list` | `03-script/`, `02-adaptation/bible.json` | `04-shots/shotlist.json`, `shotlist.csv`, `review.md`; image/motion prompts only when `production_tool` is `ai-gen` |
 
-`script-writer` picks the genre from the topic (explainer, history-documentary, true-crime, horror, fiction, comedy) and reads the core craft reference plus that genre's file; `script-qa` applies the same genre's QA overrides. `script-writer` writes to the `avoid-ai-writing` standard and fixes QA findings for at most 2 rounds. Nothing renders until `qa.md` says PASS or the user accepts it. English scripts only.
+`screenplay.json` is the one source for both branches; the text versions are rendered from it. Everything is English by default, with a Vietnamese review copy (`*.vi.md`, `screenplay.vi.txt`) beside each document the user reviews. Every writing stage hands its draft to a fresh reviewer subagent and fixes findings for at most 2 rounds.
+
+Outside the pipeline: `tts` voices `script.en.md`, `vertical-short` cuts 9:16 Shorts from a finished film.
+
+Tests: `python3 skills/video-factory/video-factory/scripts/screenplay_test.py`, `view_test.py`, `skills/video-factory/shot-list/scripts/shots_test.py`, `node --test skills/video-factory/script-qa/scripts/score.test.js`.
 
 ## Credits
 

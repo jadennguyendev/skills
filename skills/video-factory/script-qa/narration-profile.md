@@ -2,7 +2,7 @@
 
 Upstream avoid-ai-writing has no profile for spoken scripts. This one adds it. Start from the `linkedin` column of the tolerance matrix in `../avoid-ai-writing/references/patterns.md`, then apply the overrides below. The detector runs in `general` context (upstream maps `linkedin` to `marketing`, which the detector scores the same as `general`).
 
-Writers: use the `warm` voice, or `casual` when the saved script-writer tone is casual-friendly or humorous. Reviewers: voice does not change the score.
+Writers: use the `warm` voice, or `casual` when `tone` in `config.json` is casual-friendly or humorous. Reviewers: voice does not change the score.
 
 The text is `script.en.md`: words a TTS voice reads, nothing else. Headings (`# title`, `## chNN - title`) are never spoken and are not audited.
 
@@ -31,9 +31,9 @@ Upstream P0/P1/P2 apply as written. Detector severities map critical = P0, high 
 - **P1**: infomercial hooks, speculative openers, engagement-bait CTA, stacked rhetorical questions, staccato drama (3+ fragments in a row), invented specifics (see below).
 - **P2**: same-opener runs, manufactured punchlines, performed insight ("That is the whole trick"), metronome rhythm, spoken mechanics below.
 
-**Invented specifics.** Nonfiction: any number, name, date or quote not in the brief's "Facts to verify". Declared fiction: a name, place, world rule or plot fact that contradicts the story bible, or a new named character, place or rule missing from it. Incidental texture (a time of day, a gesture, a count of knocks) is not a finding unless it contradicts the bible.
+**Invented specifics.** Nonfiction: any number, name, date or quote not in the chapter's `facts_to_verify`. Declared fiction: a name, place, world rule or plot fact that contradicts the story bible, or a new named character, place or rule missing from it. Incidental texture (a time of day, a gesture, a count of knocks) is not a finding unless it contradicts the bible.
 
-Genre files in `../script-writer/references/genres/` can relax or tighten any rule in this profile through their "QA overrides" table; script-qa applies them per the `Genre:` line in `brief.md`.
+Genre files in `../narration-script/references/genres/` can relax or tighten any rule in this profile through their "QA overrides" table; script-qa applies them per `genre` in `config.json`.
 
 ## Spoken mechanics (P2 when broken)
 

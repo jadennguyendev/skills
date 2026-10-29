@@ -29,13 +29,13 @@ The core file is built for explanation, where verified fact and clarity lead. Fi
   - In a narration script: the first sentence of ch01 has a named person doing something under pressure: "Ana counted the coins twice before she knocked." Lore (the war, the empire, how the engine works) arrives one clause at a time when a character needs it, never as an opening paragraph.
   - Source: [Leonard, "Easy on the Adverbs, Exclamation Points and Especially Hooptedoodle", NYT (16 July 2001), rules 1-2](https://www.nytimes.com/2001/07/16/arts/writers-writing-easy-adverbs-exclamation-points-especially-hooptedoodle.html); [reprinted in Guardian, "Ten rules for writing fiction" (2010)](https://www.theguardian.com/books/2010/feb/20/ten-rules-for-writing-fiction-part-one)
 - **Keep pins in the air** - George Saunders: a story makes meaning "a small structural pulse at a time". Each line raises expectations, and the reader is pleased when the story takes them into account, but not when it answers them too neatly. The opening throws bowling pins; the rest of the story catches them.
-  - In a narration script: after each chapter, note in brief.md what the viewer now knows and expects. The next chapter catches at least one pin, a little off the line the viewer predicted. A pin still in the air at the last chapter is caught or cut from ch01.
+  - In a narration script: after each chapter, note in the chapter's `action` elements what the viewer now knows and expects. The next chapter catches at least one pin, a little off the line the viewer predicted. A pin still in the air at the last chapter is caught or cut from ch01.
   - Source: [Saunders, A Swim in a Pond in the Rain (2021), "A Page at a Time" (publisher excerpt)](https://www.bookreporter.com/reviews/a-swim-in-a-pond-in-the-rain/excerpt); [Saunders, "What writers really do when they write", Guardian (2017), part 7](https://www.theguardian.com/books/2017/mar/04/what-writers-really-do-when-they-write)
 - **Something in relentless motion** - Raymond Carver: "There has to be tension, a sense that something is imminent"; a little menace is fine in a story. Part of the tension lives in what is left out and implied under the surface.
   - In a narration script: give every chapter one clock or threat that the narration names once and then leaves alone: the tide, the unopened letter, the footsteps upstairs. Mystery fiction runs on this: the viewer feels the answer coming before any clue is explained.
   - Source: [Carver, "A Storyteller's Shoptalk", New York Times Book Review (15 Feb 1981)](https://www.nytimes.com/1981/02/15/books/a-storyteller-s-shoptalk.html)
 - **Pick the teller and hold the viewpoint** - Le Guin, "Point of View and Voice" and "Changing Point of View": she sets out first person, limited third person, involved author, detached author and observer-narrator, and treats a shift in viewpoint as a deliberate move. The Moth, for first-person tellers: state your fears, desires or dilemma, and "make us worry for you."
-  - In a narration script: choose the teller in the outline. One voice suits first person (a character telling their own story) or the involved author (the folk-tale teller who knows everyone's heart). Limited third keeps a mystery fair: the viewer knows what the detective knows. Switch viewpoint only at a chapter cut, and only when the brief says so.
+  - In a narration script: choose the teller in the outline. One voice suits first person (a character telling their own story) or the involved author (the folk-tale teller who knows everyone's heart). Limited third keeps a mystery fair: the viewer knows what the detective knows. Switch viewpoint only at a chapter cut, and only when the bible says so.
   - Source: [Le Guin, Steering the Craft (2015), ch. 7-8](https://www.ursulakleguin.com/steering-the-craft); [The Moth, "Storytelling Tips & Tricks"](https://www.themoth.org/tell-your-story/storytelling-tips-tricks)
 - **Show the state through the act** - Anton Chekhov to his brother Alexander: avoid describing a character's state of mind; make it clear from what they do. For nature, seize small particulars: a moonlit night is a shard of broken bottle flashing on a mill dam.
   - In a narration script: write what the person does and let the picture show the face. "He set the cup down without drinking" replaces "fear washed over him". One exact detail per setting, the kind the eye would miss in the frame.
@@ -60,20 +60,20 @@ The core file is built for explanation, where verified fact and clarity lead. Fi
 - Deliver the packaging in the first 30 seconds: keep - within the first 75 words: the person, the place, and the trouble the title promises.
 - Re-engage around minute three: keep - put the first reversal there.
 - Section 5 (explanation and clarity): does not apply, except "Convert exposition to ammunition", which governs all world lore.
-- Add to the picture: keep, stricter - narration never describes what the brief already draws.
+- Add to the picture: keep, stricter - narration never describes what the `action` elements already show.
 - Action, then what it means: change - meaning arrives through a character's act or words, never a narrator's reflection (see "Tell the story, not the message").
 - Pay off the hook in its own terms, then stop: keep; a folk tale may add one closing formula after the payoff.
 - Revision checklist: items 9-11 do not apply. Item 1 becomes "Who changes, and what changed them?". Add: every rule used in the climax appears earlier; every chapter catches a pin an earlier chapter threw.
 
-## Brief additions
+## Bible additions
 
-- Story bible in the Series section: cast (name, age, a one-line look kept identical across chapters, what they want, what they fear), places, world rules (costs and limits of magic or technology), and the through-line object with its state at the end of each chapter.
+- Story bible in the bible's `series`: cast (name, age, a one-line look kept identical across chapters, what they want, what they fear), places, world rules (costs and limits of magic or technology), and the through-line object with its state at the end of each chapter.
 - Point of view and tense, fixed for the video; any planned viewpoint switch named with its chapter.
 - Per chapter: "Viewer must feel" next to "Viewer must understand"; "Pins thrown / pins caught"; story time and place, so the picture lands the leap after each hard cut.
-- Canon list inside the story bible, in place of "Facts to verify": every name, number, date and object state the narration uses, so script-qa can check invented specifics. Real-world facts inside the fiction (a historical setting, the physics of hard sci-fi) still go under Facts to verify.
+- Canon list inside the story bible, in place of `facts_to_verify`: every name, number, date and object state the narration uses, so script-qa can check invented specifics. Real-world facts inside the fiction (a historical setting, the physics of hard sci-fi) still go under `facts_to_verify`.
 - Origin for retellings: collection, teller or tale type, and whether the source text is public domain. Adapting copyrighted fiction needs the rights holder's permission; flag it to the user before outlining.
 - Content notes: violence, death, self-harm, harm to children or animals, and how the script handles each (offscreen, one line), for YouTube age and advertiser rules.
-- Voices: which character lines, if any, get their own voice under the Series voice line; the first line of such a character is still tagged.
+- Voices: which character lines, if any, get their own voice, noted with the character in the bible; the first line of such a character is still tagged.
 
 ## QA overrides
 
@@ -83,7 +83,7 @@ The core file is built for explanation, where verified fact and clarity lead. Fi
 | Speculative openers | Keep strict; "In a world where" and an opening of lore with no person in it are P1 too | The stock fiction opener |
 | Formula openers and closers | Relax for folk tale and fable only: one opening formula ("Once there was a miller...") and one closing formula; the next sentence puts a person in action | A traditional oral device, not an AI tell |
 | Rhetorical questions | Questions inside a character's line do not count; narrator questions to the viewer stay at one per chapter | Dialogue is not narrator address |
-| Direct address ("you", "we") | Tighten: narrator address to the viewer inside the story is P2; second-person telling only when the brief names it, then held throughout | Address breaks the spell |
+| Direct address ("you", "we") | Tighten: narrator address to the viewer inside the story is P2; second-person telling only when the bible names it, then held throughout | Address breaks the spell |
 | "Let's" constructions | Tighten: none inside the story | Same |
 | Subjectless fragments | Keep: three or more in a row is P1, the climax included | Short complete sentences carry a climax; fragment runs are the tell |
 | Dialogue tags (new, P2) | A tag verb other than "said" (or "asked" for a question), an adverb on a tag, or phonetic dialect | Leonard; TTS reads dialect badly |
