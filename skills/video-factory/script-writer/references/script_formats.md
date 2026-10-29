@@ -29,6 +29,7 @@ videos/<slug>/
   script.en.md    # narration only - what the voice says, nothing else
   brief.md        # Series section + one visual brief per chapter, for Opuscar
   script.vi.md    # review translation of script.en.md (when review_translation is set)
+  qa.md           # latest script-qa verdict, score and findings for script.en.md
   chNN/           # one Opuscar project per chapter (opuscar-chapters), rendering <slug>-chNN.mp4
   <slug>.mp4      # the chapters joined by assemble.py
 ```
@@ -58,8 +59,9 @@ But to see why, we need an island with ten people and ten loaves of bread.
 # Brief - Why Printing Money Doesn't Make Anyone Richer
 
 ## Series (same for every chapter)
+- Genre: explainer - see the genre table in SKILL.md step 3
 - Opuscar style: <slug> - one style for all chapters
-- Voice: Kokoro <voice name>, English
+- Voice: tts skill - narrator Qwen3 <Ryan/Aiden> + instruct, climax characters in voices/ (Chatterbox)
 - Size/fps: 1920x1080, style default fps
 - Subtitles: burned in, plus .srt
 - Through-line: the island - same ten villagers and the same bakery in every chapter
@@ -222,18 +224,14 @@ A faithful translation for the creator to review meaning and facts - not for pub
 ### The Hook (First 5-10 seconds)
 **Purpose:** Stop the scroll, capture attention immediately
 
-**Techniques:**
-- Question: "Have you ever wondered why...?"
-- Bold statement: "This changed everything I thought I knew about..."
-- Conflict: "I made a huge mistake and here's what happened..."
-- Promise: "By the end of this video, you'll know exactly how to..."
-- Shock: "I lost $10,000 in 5 minutes..."
-- Pattern interrupt: "Stop! Before you [common action], watch this..."
+**Techniques** (concrete beats clever - each hook names a real thing the video pays off):
+- Question with stakes: "If the government printed a billion dollars for every person tomorrow, would you be richer?"
+- Specific claim: "In 1923 a loaf of bread in Berlin cost two hundred billion marks."
+- Conflict: "I moved my savings into one stock in March. By May, half of it was gone."
+- Promise: "By the end of this video you will be able to read a bond yield chart."
+- Scene: "Ten people live on an island with ten loaves of bread."
 
-**Examples:**
-- "In the next 60 seconds, I'm going to show you a trick that will save you hours"
-- "This is the most important thing I've learned in 10 years of..."
-- "Everyone gets this wrong, and it's costing them..."
+Avoid the stock hooks that read as AI: "Have you ever wondered", "This changed everything", "Here's the thing", "Stop! Before you...", "Imagine a world where", "Everyone gets this wrong". The full list is in `../../script-qa/narration-profile.md`.
 
 ### The Introduction (10-45 seconds)
 **Purpose:** Establish credibility, set expectations, deliver on hook promise
@@ -246,7 +244,7 @@ A faithful translation for the creator to review meaning and facts - not for pub
 - Quick preview of main points
 
 **Example:**
-"Hey everyone, I'm [Name], and today we're diving into [topic]. If you've ever struggled with [problem], this video is for you. I'm going to show you [solution] that [benefit]. We'll cover [point 1], [point 2], and [point 3]. Let's get started."
+"I'm [Name]. Last year I [specific problem, with a number]. This video shows the [solution] that fixed it: [point 1], then [point 2], then [point 3]. First, [point 1]."
 
 ### The Main Content
 **Purpose:** Deliver the value promised in hook and intro
@@ -260,11 +258,13 @@ A faithful translation for the creator to review meaning and facts - not for pub
 - Maintain energy
 - Include visual references
 
-**Transition Phrases:**
-- "Now that we've covered X, let's move on to Y"
-- "Here's where it gets interesting..."
-- "The next point is crucial..."
-- "Before we continue, quick note about..."
+**Transitions** - plain spoken signposts that name the next thing:
+- "So that is X. Now Y."
+- "Back to the island."
+- "The second reason is cheaper to see."
+- "One problem: the bakery only has ten loaves."
+
+Avoid essay connectors (Moreover, Furthermore, Additionally) and teasers that promise without content ("Here's where it gets interesting", "The next point is crucial").
 
 ### The Conclusion
 **Purpose:** Reinforce key takeaways, create satisfaction
@@ -276,7 +276,9 @@ A faithful translation for the creator to review meaning and facts - not for pub
 - Bridge to CTA
 
 **Example:**
-"So to recap, we covered [point 1], [point 2], and [point 3]. The main thing to remember is [key takeaway]. Now you're ready to [apply knowledge]."
+"[Pay off the hook in one sentence: the billion dollars buys the same ten loaves.] [Key takeaway, stated as a fact the viewer can use.] [What they can now do, specifically.]"
+
+Skip "So to recap" and "At the end of the day" - end on the through-line, not a summary of the summary.
 
 ### The Call to Action (CTA)
 **Purpose:** Guide viewer to next action
@@ -297,10 +299,10 @@ A faithful translation for the creator to review meaning and facts - not for pub
 ## Tone Guidelines
 
 Example openers:
-- Casual-friendly: "Hey everyone! So, funny story - I completely messed this up last week. Like, embarrassingly bad. But here's what I learned..."
-- Professional: "In today's video, we're examining the three core principles that drive successful implementation. Based on 5 years of data..."
-- Energetic: "Okay, THIS is insane! I just discovered something that's going to blow your mind. Are you ready?"
-- Educational-patient: "Let's break this down step by step. Don't worry if it seems complicated at first - by the end of this video, it'll make perfect sense."
+- Casual-friendly: "Last week I paid two hundred dollars to fix a bike I could have fixed for five. Here is the five-dollar version."
+- Professional: "Five years of loan data from three banks point to one cause of default, and it is not income."
+- Energetic: "A two-dollar part made this car twenty horsepower faster. On the dyno. Twice."
+- Educational-patient: "One step at a time. If the first chart looks like noise, that is normal - by chapter three you will read it at a glance."
 
 ### Professional/Authoritative
 - Confident language
@@ -390,10 +392,9 @@ Example openers:
 - Testimonials
 
 ### Curiosity Gaps
-- Tease information
-- "But here's the thing..."
-- "Wait until you see..."
-- "The surprising part is..."
+- Name the open question, then delay the answer: "Why did the bread cost more when nobody baked less? Hold that."
+- Show the result before the cause
+- Never tease without content: "But here's the thing...", "Wait until you see...", "The surprising part is..." are AI tells
 
 ## Common Script Mistakes to Avoid
 
@@ -407,6 +408,7 @@ Example openers:
 8. **Too much information** - Focus on key takeaways
 9. **No energy variation** - Monotone loses viewers
 10. **Ignoring target audience** - Speak directly to them
+11. **Writing like an AI** - stock hooks, inflated words, essay transitions; `script-qa` scores this before any render
 
 ## Visual Intent
 

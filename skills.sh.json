@@ -3,9 +3,9 @@
   "notGrouped": "bottom",
   "groupings": [
     {
-      "title": "Content",
-      "description": "Skills for creating content - video scripts, posts, captions.",
-      "skills": ["script-writer", "vertical-short"]
+      "title": "Video Factory",
+      "description": "End-to-end video production - research, script writing, script and content QA, and output formats.",
+      "skills": ["script-writer", "script-qa", "avoid-ai-writing", "tts", "vertical-short"]
     },
     {
       "title": "Marketing",

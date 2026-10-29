@@ -5,7 +5,7 @@ description: Write production-ready YouTube video scripts in the user's saved st
 
 # Script Writer
 
-Run the DB commands from inside the user's project - data is stored per project, in `.script-writer.json` at the git root (or the cwd if there is no git repo). `scripts/...` means the scripts in this skill's folder; call them by that path, don't `cd` into the skill. Structures, chapter rules, the output files and tone examples live in `references/script_formats.md` - read it before writing.
+Run the DB commands from inside the user's project - data is stored per project, in `.script-writer.json` at the git root (or the cwd if there is no git repo). `scripts/...` means the scripts in this skill's folder; call them by that path, don't `cd` into the skill. Structures, chapter rules, the output files and tone examples live in `references/script_formats.md` - read it before writing. Story and narration craft from screenwriters, documentary makers and radio producers lives in `references/craft_principles.md`, with the source for each principle.
 
 ## Workflow
 
@@ -48,21 +48,46 @@ EOF
 
 Topic/title, angle, must-include/avoid, CTA target. Ask only for what's missing; propose the key points yourself.
 
+Pick the genre yourself from the topic - don't ask unless two fit equally. Up to two: a primary and an optional secondary (a true-crime case told as history: `true-crime` + `history-documentary`). Tell the user which you picked in one line.
+
+| Genre | Pick when the video... | Reference |
+|-------|------------------------|-----------|
+| `explainer` | explains how something works, why something happens, science, money, tech | core only (`craft_principles.md`) |
+| `history-documentary` | tells real events, eras, places or a real person's life | `references/genres/history-documentary.md` |
+| `true-crime` | follows a real crime, investigation, scam, disappearance or unsolved case | `references/genres/true-crime.md` |
+| `horror` | is meant to scare: scary stories, supernatural, creepy places, folk horror | `references/genres/horror.md` |
+| `fiction` | tells an invented story: drama, sci-fi, fantasy, fable, folk tale | `references/genres/fiction.md` |
+| `comedy` | is mainly meant to be funny: satire, humorous narration | `references/genres/comedy.md` |
+
+Read the genre files (primary first) next to `craft_principles.md`: they add principles, override core ones that don't fit the genre, and list what `brief.md` must hold. Record the genre as `- Genre: <primary>[, <secondary>]` in the Series section of `brief.md`; script-qa reads it to apply the genre's QA overrides.
+
 ### 4. Outline
 
-Size to ~150 words per minute. With `opuscar-chapters`, split into chapters per the reference's chapter rules; otherwise use sections. Show the outline as a table (id, title, one-line goal, seconds, words, hand-off to next) plus the through-line, and wait for the user's OK - fixing structure here is cheap, after the full script it isn't.
+Read `references/craft_principles.md` and the genre files from step 3 first. Above the table, give the "a story about X, and what's interesting is Y" line and the whole video told in two or three sentences; if Y is what anyone would guess, propose a sharper angle before outlining. Size to ~150 words per minute. With `opuscar-chapters`, split into chapters per the reference's chapter rules; otherwise use sections. Show the outline as a table (id, title, one-line goal, seconds, words, hand-off to next) plus the through-line, and wait for the user's OK - fixing structure here is cheap, after the full script it isn't.
 
 ### 5. Write
 
+Write `script.en.md` to the avoid-ai-writing standard from the first draft: read `../avoid-ai-writing/SKILL.md`, its `references/patterns.md` and `../script-qa/narration-profile.md` before writing. Fixing AI-isms after the fact costs a QA round. Before the QA gate, run the revision checklist at the end of `references/craft_principles.md` and fix what fails.
+
 Each video lives in its own folder, `videos/<slug>/` in the user's project: its scripts, its chapter projects and the joined video. Write the files there, as specified in the reference: `script.en.md` (narration only), `brief.md` (Series section + per-chapter visual intent and facts to verify), `script.vi.md` (review translation, only if `review_translation` is set). Pick the template matching the video type. Report each chapter's word count and estimated seconds.
 
-### 6. Refine and save
+### 6. QA gate
+
+Hand `videos/<slug>/script.en.md` to a fresh subagent running the `script-qa` skill, with the round number (1 for a new draft, +1 per fix round) - never review your own draft in this context. It writes `videos/<slug>/qa.md` with a PASS / REVISE / FAIL verdict and quoted findings.
+
+- PASS: show the verdict line and go on.
+- REVISE or FAIL: fix exactly the listed findings (no other rewording), keep `script.vi.md` in sync, and run QA again.
+- At most 2 fix rounds. Still not PASS after that: stop and show the user `qa.md` - they decide whether to fix further or accept.
+
+Any later change to `script.en.md` (step 7) reruns this gate.
+
+### 7. Refine and save
 
 Offer adjustments (stronger hook, trim/expand, tone, humor, data, storytelling, CTA). Keep the three files in sync on every change. Once the user accepts:
 
 ```bash
 python3 scripts/script_db.py add_script <<'EOF'
-{"title": "Why Printing Money Doesn't Make Anyone Richer", "type": "explainer",
+{"title": "Why Printing Money Doesn't Make Anyone Richer", "type": "explainer", "genre": "explainer",
  "tone": "educational-patient", "path": "videos/why-printing-money", "chapters": 7,
  "word_count": 1500, "duration_minutes": 10}
 EOF
@@ -70,9 +95,9 @@ EOF
 
 The DB stores the path, not the text - the files are the source of truth.
 
-### 7. Produce with Opuscar (production: opuscar-chapters)
+### 8. Produce with Opuscar (production: opuscar-chapters)
 
-Render each chapter as its own film with the `lemo-opuscar` skill, one run per chapter, using this prompt:
+Only render when `qa.md` says PASS or the user accepted the QA result - a render is expensive, a script fix is not. Render each chapter as its own film with the `lemo-opuscar` skill, one run per chapter, using this prompt:
 
 > Use lemo-opuscar. Make chapter chNN of "<title>", project folder `videos/<slug>/chNN`, film `<slug>-chNN.mp4`. Follow the Series section and the chNN section of `videos/<slug>/brief.md`. Narration is the chNN section of `videos/<slug>/script.en.md`, word for word. The brief answers your questions; only ask about what it leaves open.
 
