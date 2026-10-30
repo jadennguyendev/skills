@@ -4,8 +4,8 @@
   "groupings": [
     {
       "title": "Video Factory",
-      "description": "Video pre-production from idea or story to review-ready documents - novel, screenplay, narration, shot list - plus script QA, voice and vertical shorts.",
-      "skills": ["video-factory", "story-writer", "screen-adapter", "narration-script", "shot-list", "script-qa", "avoid-ai-writing", "tts", "vertical-short"]
+      "description": "Retired - replaced by the movie-factory Claude Code plugin. Installing video-factory shows how to switch.",
+      "skills": ["video-factory"]
     },
     {
       "title": "Marketing",
